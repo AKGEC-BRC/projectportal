@@ -1,0 +1,32 @@
+var msg;
+  function setStatus(message) {
+  var status = document.getElementById("status");
+  status.innerHTML = message;
+};
+
+function addData() {
+  var meta = Student.deployed();
+
+  var fname = document.getElementById("fname").value;
+  var lname = document.getElementById("lname").value;
+  var age = parseInt(document.getElementById("age").value);
+  var pnum = parseInt(document.getElementById("pnum").value);
+  var email = document.getElementById("email").value;
+
+  meta.adddetail(fname,lname,age,pnum,email, {from: account}).then(function() {
+    setStatus("Details Added");
+  }).catch(function(e) {
+    console.log(e);
+    setStatus("Error in adding Details ");
+  });
+
+  var event=meta.LogLength({},function(error,result){
+       if(!error){
+      var msg=result.args.index;
+}
+});
+}
+};
+
+
+
