@@ -1,4 +1,8 @@
-var stud = student.deployed();
+import { default as Web3} from 'web3';
+import { default as contract } from 'truffle-contract';
+
+import student_artifacts from '../../build/contracts/student.json'
+var stud = contract(student_artifacts);
 var msg;
 var account;
 var Web3 = require('web3');//including web3
@@ -12,8 +16,6 @@ var fnction=web3.eth.contract(ab).at(add);
 }
 
 function ad() {
-  var stud = student.deployed();
-   alert("gg");
   var fname = document.getElementById("fname").value;
   var lname = document.getElementById("lname").value;
   var age = parseInt(document.getElementById("age").value);
